@@ -1,5 +1,4 @@
 package pacheco.tp6grupo16.entidad;
-
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,18 +7,26 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.CascadeType;
+
 @Entity
 @Table(name="medico")
 public class Medico implements Serializable {
 	
+
 	//implementar serializable
 	private static final long serialVersionUID = 1L;
 	
-
-	  @ManyToOne
-	    @JoinColumn(name="especialidad_id")
-	    private Especialidad especialidad;
+	@OneToOne(cascade= {CascadeType.ALL})
+	@JoinColumn(name="Id")
+	private Usuario usuario;
+	
+	
+	@ManyToOne
+	@JoinColumn(name="especialidad_id")
+	private Especialidad especialidad;
 	
 	@Id
 	@Column(name="legajo")
@@ -85,7 +92,39 @@ public class Medico implements Serializable {
 		this.telefono = telefono;
 	}
 	
+	public Medico(Usuario usuario, Especialidad especialidad, int legajo, String nombre, String apellido, String sexo,
+			String fechaNacimiento, String direccion, String localidad, String correoElectronico, String telefono) {
+		super();
+		this.usuario = usuario;
+		this.especialidad = especialidad;
+		this.legajo = legajo;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.sexo = sexo;
+		this.fechaNacimiento = fechaNacimiento;
+		this.direccion = direccion;
+		this.localidad = localidad;
+		this.correoElectronico = correoElectronico;
+		this.telefono = telefono;
+	}
+
 	
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+	public Especialidad getEspecialidad() {
+		return especialidad;
+	}
+
+	public void setEspecialidad(Especialidad especialidad) {
+		this.especialidad = especialidad;
+	}
 
 	public int getLegajo() {
 		return legajo;

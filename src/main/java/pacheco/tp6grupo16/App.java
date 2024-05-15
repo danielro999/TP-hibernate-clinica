@@ -4,12 +4,15 @@ import java.util.List;
 
 import dao.DaoHibernate;
 import pacheco.tp6grupo16.entidad.Medico;
+import pacheco.tp6grupo16.entidad.Usuario;
 
 public class App {
 	public static void main( String[] args )
 	{
 		//carga de datos
 		Medico m1= new Medico("Kristina", "kisn" , "fem", "02-02-45", "Peron y Eva 1000" , "recoleta", "kristinakisn@gmail.com", "2352-3543" );
+		Usuario us1 = new Usuario (m1, "kisCampora", "dios");
+		m1.setUsuario(us1);
 		Medico m2= new Medico("leo", "Messi" , "masc", "02-02-90", "Peron 1000" , "miami", "leoMessi@gmail.com", "101010-1010" );
 		Medico m3= new Medico("javier", "milei" , "masc", "02-02-72", "av. mitre 444" , "v.Lopez", "libertad@yahoo.com", "2352-3543" );
 		Medico m4= new Medico("albert", "ferandez" , "masc", "02-02-44", "ibai 444" , "madrid", "euroa@yahoo.com", "22352-3543" );

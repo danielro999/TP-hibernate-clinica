@@ -3,7 +3,7 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "usuarios")
+@Table(name = "usuario")
 public class Usuario implements Serializable {
 	
 	//implementar serializable
@@ -13,11 +13,31 @@ public class Usuario implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
+    @OneToOne(mappedBy = "usuario", fetch = FetchType.LAZY)
+    private Medico medico;
+    
     @Column(name = "nombre_usuario")
     private String nombreUsuario;
     
-    private String contraseña;
+	
+    private String contrasenia;
 
+    
+    
+    public Usuario() {
+	}
+
+	public Usuario(Medico medico, String nombreUsuario, String contrasenia) {
+		super();
+		this.medico = medico;
+		this.nombreUsuario = nombreUsuario;
+		this.contrasenia = contrasenia;
+	}
+
+
+    
+    
+    
 	public Long getId() {
 		return id;
 	}
@@ -34,12 +54,20 @@ public class Usuario implements Serializable {
 		this.nombreUsuario = nombreUsuario;
 	}
 
-	public String getContraseña() {
-		return contraseña;
+	public String getContrasenia() {
+		return contrasenia;
 	}
 
-	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
+	public Medico getMedico() {
+		return medico;
+	}
+
+	public void setMedico(Medico medico) {
+		this.medico = medico;
+	}
+
+	public void setContrasenia(String contraseña) {
+		this.contrasenia = contraseña;
 	}
 
 	@Override
