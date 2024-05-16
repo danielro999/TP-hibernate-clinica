@@ -12,7 +12,7 @@ import javax.persistence.Table;
 import javax.persistence.CascadeType;
 
 @Entity
-@Table(name="medico")
+@Table(name="MEDICOS")
 public class Medico implements Serializable {
 	
 

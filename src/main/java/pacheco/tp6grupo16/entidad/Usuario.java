@@ -3,7 +3,7 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "usuario")
+@Table(name = "USUARIOS")
 public class Usuario implements Serializable {
 	
 	//implementar serializable
