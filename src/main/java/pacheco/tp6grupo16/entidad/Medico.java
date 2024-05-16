@@ -15,24 +15,21 @@ import javax.persistence.CascadeType;
 @Table(name="MEDICOS")
 public class Medico implements Serializable {
 	
-
 	//implementar serializable
 	private static final long serialVersionUID = 1L;
-	
-	@OneToOne(cascade= {CascadeType.ALL})
-	@JoinColumn(name="Id")
-	private Usuario usuario;
-	
-	
-	@ManyToOne
-	@JoinColumn(name="especialidad_id")
-	private Especialidad especialidad;
 	
 	@Id
 	@Column(name="legajo")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int legajo;
 	
+	@OneToOne(cascade= {CascadeType.ALL})
+	@JoinColumn(name="Id")
+	private Usuario usuario;
+		
+	@ManyToOne
+	@JoinColumn(name="especialidad_id")
+	private Especialidad especialidad;
 	
 	@Column(name="nombre")
 	private String nombre;
@@ -62,7 +59,7 @@ public class Medico implements Serializable {
 	//constructor vacio
 	public Medico()
 	{
-		
+		super();
 	}
 	
 	public Medico(int legajo, String nombre, String apellido, String sexo, String fechaNacimiento, String direccion,

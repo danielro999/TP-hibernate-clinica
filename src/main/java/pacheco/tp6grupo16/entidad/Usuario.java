@@ -1,6 +1,14 @@
 package pacheco.tp6grupo16.entidad;
 import java.io.Serializable;
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
 
 @Entity
 @Table(name = "USUARIOS")
@@ -22,8 +30,6 @@ public class Usuario implements Serializable {
 	
     private String contrasenia;
 
-    
-    
     public Usuario() {
 	}
 
@@ -34,10 +40,6 @@ public class Usuario implements Serializable {
 		this.contrasenia = contrasenia;
 	}
 
-
-    
-    
-    
 	public Long getId() {
 		return id;
 	}
