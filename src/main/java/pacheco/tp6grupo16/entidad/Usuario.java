@@ -9,7 +9,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-
 @Entity
 @Table(name = "USUARIOS")
 public class Usuario implements Serializable {
@@ -19,6 +18,7 @@ public class Usuario implements Serializable {
 	
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+   // @Column(name="id_usuario")
     private Long id;
     
     @OneToOne(mappedBy = "usuario", fetch = FetchType.LAZY)

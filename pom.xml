@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>pacheco</groupId>
-  <artifactId>tp5grupo16</artifactId>
+  <artifactId>tp4grupo16</artifactId>
   <version>0.0.1</version>
   <packaging>jar</packaging>
 
-  <name>tp6grupo16</name>
+  <name>tp4grupo16</name>
   <url>http://maven.apache.org</url>
 
   <properties>

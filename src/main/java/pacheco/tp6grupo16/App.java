@@ -58,11 +58,16 @@ public class App {
 		System.out.println("El legajo " + medicoTraido.getLegajo() + " es: " + medicoTraido);
 		
 		//lista de medicos
+		
+		
+		
+		/*
 		List<Medico> misMedicos;  
 		misMedicos=DaoHibernate.traerMedicos();
 		 for (Medico med : misMedicos)
 		    {
 		        System.out.println(med);
 		    }	
+		    */
 	}
 }

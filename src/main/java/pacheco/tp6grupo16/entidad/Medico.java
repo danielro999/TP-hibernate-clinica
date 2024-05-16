@@ -24,7 +24,7 @@ public class Medico implements Serializable {
 	private int legajo;
 	
 	@OneToOne(cascade= {CascadeType.ALL})
-	@JoinColumn(name="Id")
+	@JoinColumn(name="id_usuario")
 	private Usuario usuario;
 		
 	@ManyToOne

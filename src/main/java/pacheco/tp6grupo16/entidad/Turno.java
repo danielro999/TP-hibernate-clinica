@@ -31,9 +31,6 @@ public class Turno implements Serializable {
     private String estado;
 
     // Getters y Setters
-    
-
-
 	public Long getId() {
 		return id;
 	}
