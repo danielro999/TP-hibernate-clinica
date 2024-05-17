@@ -16,10 +16,25 @@ public class Especialidad implements Serializable {
     
     private String nombre;
     
+    
     @OneToMany(mappedBy = "especialidad")
     private List<Medico> medicos;
 
-    // Getters y Setters
+    
+    
+    public Especialidad() {
+		
+	}
+    
+	public Especialidad(Long id, String nombre) {
+		super();
+		this.id = id;
+		this.nombre = nombre;
+	}
+
+
+
+	// Getters y Setters
     
 	public Long getId() {
 		return id;

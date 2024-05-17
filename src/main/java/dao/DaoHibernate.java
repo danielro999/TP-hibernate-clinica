@@ -15,7 +15,6 @@ public class DaoHibernate {
 		Session session = configuracion.abrirConexion();
 		
 		session.beginTransaction();//preparar el trabajo
-		
 		session.save(medico);
 		//guarda y cierra
 		session.getTransaction().commit();
