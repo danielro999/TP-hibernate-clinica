@@ -64,11 +64,11 @@ public class App {
 		especialidad3.setNombre("traumatologo");
 		especialidad4.setNombre("cardiologo");
 		
-		
+		/*
 		guardarEspecialidad(especialidad1);
 		guardarEspecialidad(especialidad2);
 		guardarEspecialidad(especialidad3);
-		guardarEspecialidad(especialidad4);
+		guardarEspecialidad(especialidad4);*/
 		
 		m1.setEspecialidad(especialidad1);
 		m2.setEspecialidad(especialidad1);
@@ -98,9 +98,9 @@ public class App {
 		DaoHibernate.traerMedicos();
 		
 	
-				
+			
 		Medico medicoTraido;
-		medicoTraido= DaoHibernate.leerMedico(1);
+		medicoTraido= DaoHibernate.leerMedico(2);
 		//ver medico que traje
 		System.out.println("El legajo " + medicoTraido.getLegajo() + " es: " + medicoTraido);
 		

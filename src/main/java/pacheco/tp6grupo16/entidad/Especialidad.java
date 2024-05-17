@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 @Entity
-@Table(name = "especialidades")
+@Table(name = "ESPECIALIDADES")
 public class Especialidad implements Serializable {
 	
 	//implementar serializable
@@ -16,15 +16,10 @@ public class Especialidad implements Serializable {
     
     private String nombre;
     
-    
-    @OneToMany(mappedBy = "especialidad")
-    private List<Medico> medicos;
+    //@OneToMany(mappedBy = "especialidad")
+   // private List<Medico> medicos;
 
-    
-    
-    public Especialidad() {
-		
-	}
+    public Especialidad() { }
     
 	public Especialidad(Long id, String nombre) {
 		super();
@@ -51,7 +46,7 @@ public class Especialidad implements Serializable {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
+/*
 	public List<Medico> getMedicos() {
 		return medicos;
 	}
@@ -59,7 +54,7 @@ public class Especialidad implements Serializable {
 	public void setMedicos(List<Medico> medicos) {
 		this.medicos = medicos;
 	}
-	
+	*/
     @Override
     public String toString() {
         return "Especialidad{" +

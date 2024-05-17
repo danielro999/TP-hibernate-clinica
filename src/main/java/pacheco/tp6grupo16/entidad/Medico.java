@@ -2,6 +2,7 @@ package pacheco.tp6grupo16.entidad;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -27,7 +28,7 @@ public class Medico implements Serializable {
 	@JoinColumn(name="id_usuario")
 	private Usuario usuario;
 		
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY, cascade= {CascadeType.ALL})
 	@JoinColumn(name="especialidad_id")
 	private Especialidad especialidad;
 	
