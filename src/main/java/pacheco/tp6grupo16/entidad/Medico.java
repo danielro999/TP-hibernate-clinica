@@ -28,7 +28,7 @@ public class Medico implements Serializable {
 	@JoinColumn(name="id_usuario")
 	private Usuario usuario;
 		
-	@ManyToOne(fetch = FetchType.LAZY, cascade= {CascadeType.ALL})
+	@ManyToOne(cascade= {CascadeType.ALL})
 	@JoinColumn(name="especialidad_id")
 	private Especialidad especialidad;
 	
@@ -195,14 +195,20 @@ public class Medico implements Serializable {
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
-
 	//met ToString()
 	@Override
 	public String toString() {
-		return "Medico [legajo=" + legajo + ", nombre=" + nombre + ", apellido=" + apellido + ", sexo=" + sexo
-				+ ", fechaNacimiento=" + fechaNacimiento + ", direccion=" + direccion + ", localidad=" + localidad
-				+ ", correoElectronico=" + correoElectronico + ", telefono=" + telefono + "]";
+		String mensaje = "Medico [legajo=" + legajo + ", nombre="
+				+ nombre + ", apellido=" + apellido + ", sexo=" + sexo + ", fechaNacimiento=" + fechaNacimiento
+				+ ", direccion=" + direccion + ", localidad=" + localidad + ", correoElectronico=" + correoElectronico
+				+ ", telefono=" + telefono + "]";
+		if (usuario != null) {
+			mensaje += ", usiario= " + usuario.getNombreUsuario();
+		}
+		if (especialidad != null) {
+			mensaje += ", especialidad= " + especialidad.getNombre();
+		}
+		return mensaje;
 	}
-	
 
 }

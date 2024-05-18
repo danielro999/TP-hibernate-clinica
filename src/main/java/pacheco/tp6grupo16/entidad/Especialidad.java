@@ -55,12 +55,10 @@ public class Especialidad implements Serializable {
 		this.medicos = medicos;
 	}
 	*/
-    @Override
-    public String toString() {
-        return "Especialidad{" +
-                "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                '}';
-    }
 
+	@Override
+	public String toString() {
+		return "Especialidad [id=" + id + ", nombre=" + nombre + "]";
+	}
+	
 }

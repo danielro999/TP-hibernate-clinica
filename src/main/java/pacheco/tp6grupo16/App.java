@@ -102,9 +102,11 @@ public class App {
 		Medico medicoTraido;
 		medicoTraido= DaoHibernate.leerMedico(2);
 		//ver medico que traje
-		System.out.println("El legajo " + medicoTraido.getLegajo() + " es: " + medicoTraido);
+		System.out.println("El legajo " + medicoTraido.getLegajo() + 
+									" es: " + medicoTraido.getNombre() + 
+											" " + medicoTraido.getApellido());
 		
-		
+		System.out.println(m2);
 	}
 	
 	private static  void guardarEspecialidad(Especialidad esp)
