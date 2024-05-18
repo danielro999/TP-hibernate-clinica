@@ -6,7 +6,7 @@ import org.hibernate.Session;
 
 import pacheco.tp6grupo16.entidad.Medico;
 
-public class DaoHibernate {
+public class DaoHibMedico {
 
 	public static void crearMedico(Medico medico)
 	{
@@ -14,8 +14,10 @@ public class DaoHibernate {
 		ConfiguracionHibernate configuracion = new ConfiguracionHibernate();
 		Session session = configuracion.abrirConexion();
 		
-		session.beginTransaction();//preparar el trabajo
+		//preparar el trabajo
+		session.beginTransaction();
 		session.save(medico);
+		
 		//guarda y cierra
 		session.getTransaction().commit();
 		configuracion.cerrarSession();
