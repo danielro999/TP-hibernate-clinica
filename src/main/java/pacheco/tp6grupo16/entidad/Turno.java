@@ -19,16 +19,32 @@ public class Turno implements Serializable {
     @JoinColumn(name = "medico_id")
     private Medico medico;
     
-    @ManyToOne
+    @ManyToOne(fetch= FetchType.EAGER)
     @JoinColumn(name = "paciente_id")
     private Paciente paciente;
     
-    @Temporal(TemporalType.DATE)
-    private Date fecha;
+    
+    private String fecha;
     
     private String hora;
     private String observacion;
     private String estado;
+    
+    
+    public Turno() {
+		
+   	}
+
+      
+   	public Turno(Medico medico, Paciente paciente, String fecha, String hora, String observacion, String estado) {
+   		super();
+   		this.medico = medico;
+   		this.paciente = paciente;
+   		this.fecha = fecha;
+   		this.hora = hora;
+   		this.observacion = observacion;
+   		this.estado = estado;
+   	}
 
     // Getters y Setters
 	public Long getId() {
@@ -55,11 +71,11 @@ public class Turno implements Serializable {
 		this.paciente = paciente;
 	}
 
-	public Date getFecha() {
+	public String getFecha() {
 		return fecha;
 	}
 
-	public void setFecha(Date fecha) {
+	public void setFecha(String fecha) {
 		this.fecha = fecha;
 	}
 

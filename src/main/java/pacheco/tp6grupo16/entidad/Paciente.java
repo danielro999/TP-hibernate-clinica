@@ -22,6 +22,27 @@ public class Paciente implements Serializable {
     private String provincia;
     private String fechaNacimiento;
     private String correoElectronico;
+    
+public Paciente() {
+		
+	}
+    
+    
+
+	public Paciente(String nombre, String apellido, String dni, String telefono, String direccion, String localidad,
+			String provincia, String fechaNacimiento, String correoElectronico) {
+		super();
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.dni = dni;
+		this.telefono = telefono;
+		this.direccion = direccion;
+		this.localidad = localidad;
+		this.provincia = provincia;
+		this.fechaNacimiento = fechaNacimiento;
+		this.correoElectronico = correoElectronico;
+	}
+
 
     // Getters y Setters
     

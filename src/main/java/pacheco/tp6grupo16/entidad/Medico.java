@@ -28,7 +28,7 @@ public class Medico implements Serializable {
 	@JoinColumn(name="id_usuario")
 	private Usuario usuario;
 		
-	@ManyToOne(cascade= {CascadeType.ALL})
+	@ManyToOne(cascade= {CascadeType.ALL}, fetch = FetchType.LAZY)
 	@JoinColumn(name="especialidad_id")
 	private Especialidad especialidad;
 	

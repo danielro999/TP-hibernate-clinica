@@ -5,9 +5,14 @@ import java.util.List;
 import org.hibernate.Session;
 
 import dao.ConfiguracionHibernate;
+import dao.DaoHibEspecialidad;
+import dao.DaoHibPaciente;
 import dao.DaoHibernate;
+import dao.DaoHibernateTurno;
 import pacheco.tp6grupo16.entidad.Especialidad;
 import pacheco.tp6grupo16.entidad.Medico;
+import pacheco.tp6grupo16.entidad.Paciente;
+import pacheco.tp6grupo16.entidad.Turno;
 import pacheco.tp6grupo16.entidad.Usuario;
 
 public class App {
@@ -64,11 +69,13 @@ public class App {
 		especialidad3.setNombre("traumatologo");
 		especialidad4.setNombre("cardiologo");
 		
+		
 		/*
-		guardarEspecialidad(especialidad1);
-		guardarEspecialidad(especialidad2);
-		guardarEspecialidad(especialidad3);
-		guardarEspecialidad(especialidad4);*/
+		DaoHibEspecialidad.crearEspecialidad(especialidad1);
+		DaoHibEspecialidad.crearEspecialidad(especialidad1);
+		DaoHibEspecialidad.crearEspecialidad(especialidad1);
+		DaoHibEspecialidad.crearEspecialidad(especialidad1);
+		*/
 		
 		m1.setEspecialidad(especialidad1);
 		m2.setEspecialidad(especialidad1);
@@ -94,9 +101,37 @@ public class App {
 		DaoHibernate.crearMedico(m9);
 		DaoHibernate.crearMedico(m10);
 		DaoHibernate.crearMedico(m11);
-	
-		DaoHibernate.traerMedicos();
 		
+		
+		//crear pacientes
+				Paciente paciente1 = new Paciente("walter","guerrero","21212121",
+						"1549352758","eva peron 2942","garin","bsas",
+						"07/10/76","walter@gmail.com");
+				DaoHibPaciente.crearPaciente(paciente1);
+				Paciente paciente2 = new Paciente("carla","calatayud","21212121",
+						"1549352758","eva peron 2942","garin","bsas",
+						"07/10/79","carla@gmail.com");
+				DaoHibPaciente.crearPaciente(paciente2);
+				Paciente paciente3 = new Paciente("mateo","guerrero","21212121",
+						"1549352758","eva peron 2942","garin","bsas",
+						"07/10/2013","mateo@gmail.com");
+				DaoHibPaciente.crearPaciente(paciente3);
+				Paciente paciente4 = new Paciente("rosario","guerrero","21212121",
+						"1549352758","eva peron 2942","garin","bsas",
+						"07/10/2006","rosario@gmail.com");
+				DaoHibPaciente.crearPaciente(paciente4);
+	
+				
+				
+				//crear un turno
+				Turno turno1 = new Turno(m1,paciente1,"20/06/24","8hs","pra ves","particular");
+				DaoHibernateTurno.crearTurno(turno1);
+				Turno turno2 = new Turno(m1,paciente2,"20/06/24","8:30hs","pra ves","particular");
+				DaoHibernateTurno.crearTurno(turno2);
+				Turno turno3 = new Turno(m3,paciente1,"22/06/24","16hs","chequeo","galeno");
+				DaoHibernateTurno.crearTurno(turno3);
+				
+				
 	
 			
 		Medico medicoTraido;
@@ -109,16 +144,4 @@ public class App {
 		System.out.println(m2);
 	}
 	
-	private static  void guardarEspecialidad(Especialidad esp)
-	{
-		//variables de configuracion de Hibernate
-		ConfiguracionHibernate configuracion = new ConfiguracionHibernate();
-		Session session = configuracion.abrirConexion();
-		
-		session.beginTransaction();//preparar el trabajo
-		session.save(esp);
-		//guarda y cierra
-		session.getTransaction().commit();
-		configuracion.cerrarSession();
-	}
 }
