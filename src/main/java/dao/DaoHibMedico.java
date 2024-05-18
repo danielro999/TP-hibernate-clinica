@@ -37,7 +37,7 @@ public class DaoHibMedico {
 		return medicoLeido;
 	}
 	
-	public static List<Medico> traerMedicos () 
+	public static List<Medico> ListarMedicos () 
 		{
 		ConfiguracionHibernate configuracion = new ConfiguracionHibernate();
 		Session session = configuracion.abrirConexion();

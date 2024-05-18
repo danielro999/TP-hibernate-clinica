@@ -27,8 +27,6 @@ public Paciente() {
 		
 	}
     
-    
-
 	public Paciente(String nombre, String apellido, String dni, String telefono, String direccion, String localidad,
 			String provincia, String fechaNacimiento, String correoElectronico) {
 		super();

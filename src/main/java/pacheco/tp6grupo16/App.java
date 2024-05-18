@@ -124,28 +124,59 @@ public class App {
 		DaoHibTurno.crearTurno(turno2);
 		Turno turno3 = new Turno(m3, paciente1, "22/06/24", "16hs", "chequeo", "galeno");
 		DaoHibTurno.crearTurno(turno3);
-
-		Medico medicoTraido;
-		medicoTraido = DaoHibMedico.leerMedico(2);
-		// ver medico que traje
-		System.out.println("El legajo " + medicoTraido.getLegajo() + " es: " + medicoTraido.getNombre() + " "
-				+ medicoTraido.getApellido());
-
-		System.out.println(m2);
 		
-		List<Turno> turnos = DaoHibTurno.traerTunos();
+		System.out.println("\n		---  Lista de pacientes  ---\n");
+		 
+		List<Paciente> pacientes = DaoHibPaciente.ListarTurnos();
 		
-		for (Turno turno : turnos) {
+		for (Paciente paciente : pacientes) {
+			System.out.println(paciente);
+		}
+		
+		
+		
+		System.out.println("\n		---  lista turnos  ---\n");
+		
+		List<Turno> turnos = DaoHibTurno.ListarTurnos();
+		
+		for (Turno turno : turnos) 
+		{
 			System.out.println(turno);
 		}
 		
+		
+		System.out.println("\n		---  turno id=1 eliminado  ---\n");
+
 		DaoHibTurno.eliminarTurnoPorId(1);
 		
-		turnos = DaoHibTurno.traerTunos();
+		turnos = DaoHibTurno.ListarTurnos();
+		for (Turno turno : turnos) 
+		{
+			System.out.println(turno);
+		}
+		
+	
+		System.out.println("\n		---  turno id=2 actualizado  ---\n");
+
+		Turno turnoUpd = new Turno(2, m3, paciente1, "20/06/25", "700hs", "mal aliento", "particular");
+		DaoHibTurno.actualizarTurno(turnoUpd);
+		turnos = DaoHibTurno.ListarTurnos();
 		for (Turno turno : turnos) {
 			System.out.println(turno);
 		}
+		
+	
+		System.out.println( "\n		---  Medicos y sus usuarios  ---\n");
+
+		List<Medico> medicos = DaoHibMedico.ListarMedicos();
+		
+		for (Medico medico : medicos) 
+		{
+			System.out.println("medico= " + medico.getNombre()+ " " + medico.getApellido() + ", "
+								+ "ususario= " + medico.getUsuario().getNombreUsuario());
+		}
+		
+		
+		
 	}
-
-
 }

@@ -13,7 +13,7 @@ public class Turno implements Serializable {
 	
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
     
     @ManyToOne
     @JoinColumn(name = "medico_id")
@@ -34,6 +34,17 @@ public class Turno implements Serializable {
     public Turno() {
 		
    	}
+    
+  	public Turno( int id, Medico medico, Paciente paciente, String fecha, String hora, String observacion, String estado) {
+   		super();
+   		this.id = id;
+   		this.medico = medico;
+   		this.paciente = paciente;
+   		this.fecha = fecha;
+   		this.hora = hora;
+   		this.observacion = observacion;
+   		this.estado = estado;
+   	}
 
       
    	public Turno(Medico medico, Paciente paciente, String fecha, String hora, String observacion, String estado) {
@@ -47,11 +58,11 @@ public class Turno implements Serializable {
    	}
 
     // Getters y Setters
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

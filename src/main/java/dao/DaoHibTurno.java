@@ -33,7 +33,7 @@ public class DaoHibTurno {
 		configuracion.cerrarSession();
 	}
 	
-	public static void eliminarTurnoPorId(long id) 
+	public static void eliminarTurnoPorId(int id) 
 	{
 		//variables de configuracion de Hibernate
 		ConfiguracionHibernate configuracion = new ConfiguracionHibernate();
@@ -48,7 +48,7 @@ public class DaoHibTurno {
 		configuracion.cerrarSession();
 	}
 	
-	public static List<Turno> traerTunos() 
+	public static List<Turno> ListarTurnos() 
 	{
 	ConfiguracionHibernate configuracion = new ConfiguracionHibernate();
 	Session session = configuracion.abrirConexion();
@@ -58,6 +58,21 @@ public class DaoHibTurno {
 	
     return turnos;
 	}
+	
+	public static void actualizarTurno(Turno turno)
+	{
+		//variables de configuracion de Hibernate
+		ConfiguracionHibernate configuracion = new ConfiguracionHibernate();
+		Session session = configuracion.abrirConexion();
+		
+		session.beginTransaction();//preparar el trabajo
+		
+		session.update(turno);
+		//guarda y cierra
+		session.getTransaction().commit();
+		configuracion.cerrarSession();
+	}
+	
 	
 	
 
