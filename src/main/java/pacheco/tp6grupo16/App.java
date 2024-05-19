@@ -1,6 +1,8 @@
 package pacheco.tp6grupo16;
 import dao.DaoHibPaciente;
 import java.util.List;
+
+import dao.DaoHibEspecialidad;
 import dao.DaoHibMedico;
 import dao.DaoHibTurno;
 import pacheco.tp6grupo16.entidad.Especialidad;
@@ -60,22 +62,29 @@ public class App {
 		m11.setUsuario(usuario11);
 
 		// especialidades
-		Especialidad especialidad1 = new Especialidad();
-		Especialidad especialidad2 = new Especialidad();
-		Especialidad especialidad3 = new Especialidad();
-		Especialidad especialidad4 = new Especialidad();
-
-		especialidad1.setNombre("clinico");
-		especialidad2.setNombre("pediatra");
-		especialidad3.setNombre("traumatologo");
-		especialidad4.setNombre("cardiologo");
-
-		/*
-		 * DaoHibEspecialidad.crearEspecialidad(especialidad1);
-		 * DaoHibEspecialidad.crearEspecialidad(especialidad1);
-		 * DaoHibEspecialidad.crearEspecialidad(especialidad1);
-		 * DaoHibEspecialidad.crearEspecialidad(especialidad1);
-		 */
+		Especialidad especialidad1 = new Especialidad("clinico");
+		Especialidad especialidad2 = new Especialidad("pediatra");
+		Especialidad especialidad3 = new Especialidad("traumatologo");
+		Especialidad especialidad4 = new Especialidad("cardiologo");
+		Especialidad especialidad5 = new Especialidad("urologo");
+		Especialidad especialidad6 = new Especialidad("oculista");
+		Especialidad especialidad7 = new Especialidad("nutrisionista");
+		Especialidad especialidad8 = new Especialidad("diabetologa");
+		Especialidad especialidad9 = new Especialidad("ginecologo");
+		Especialidad especialidad10 = new Especialidad("neumonologo");
+		
+		
+	    DaoHibEspecialidad.crearEspecialidad(especialidad1);
+		DaoHibEspecialidad.crearEspecialidad(especialidad2);
+		DaoHibEspecialidad.crearEspecialidad(especialidad3);
+		DaoHibEspecialidad.crearEspecialidad(especialidad4);
+		DaoHibEspecialidad.crearEspecialidad(especialidad5);
+		DaoHibEspecialidad.crearEspecialidad(especialidad6);
+		DaoHibEspecialidad.crearEspecialidad(especialidad7);
+		DaoHibEspecialidad.crearEspecialidad(especialidad8);
+		DaoHibEspecialidad.crearEspecialidad(especialidad9);
+		DaoHibEspecialidad.crearEspecialidad(especialidad10);
+		
 
 		m1.setEspecialidad(especialidad1);
 		m2.setEspecialidad(especialidad1);
@@ -107,23 +116,62 @@ public class App {
 		Paciente paciente1 = new Paciente("walter", "guerrero", "21212121", "1549352758", "eva peron 2942", "garin",
 				"bsas", "07/10/76", "walter@gmail.com");
 		DaoHibPaciente.crearPaciente(paciente1);
-		Paciente paciente2 = new Paciente("carla", "calatayud", "21212121", "1549352758", "eva peron 2942", "garin",
+		Paciente paciente2 = new Paciente("carla", "calatayud", "11111111", "66666666", "eva peron 2942", "garin",
 				"bsas", "07/10/79", "carla@gmail.com");
 		DaoHibPaciente.crearPaciente(paciente2);
-		Paciente paciente3 = new Paciente("mateo", "guerrero", "21212121", "1549352758", "eva peron 2942", "garin",
+		Paciente paciente3 = new Paciente("mateo", "guerrero", "222222222", "57575755", "eva peron 2942", "garin",
 				"bsas", "07/10/2013", "mateo@gmail.com");
 		DaoHibPaciente.crearPaciente(paciente3);
-		Paciente paciente4 = new Paciente("rosario", "guerrero", "21212121", "1549352758", "eva peron 2942", "garin",
+		Paciente paciente4 = new Paciente("rosario", "guerrero", "33333333", "78787878", "eva peron 2942", "garin",
 				"bsas", "07/10/2006", "rosario@gmail.com");
 		DaoHibPaciente.crearPaciente(paciente4);
+		Paciente paciente5 = new Paciente("martin", "calatayud", "444444444", "808080880", "las rosas 1617", "talar",
+				"bsas", "07/10/76", "walter@gmail.com");
+		DaoHibPaciente.crearPaciente(paciente5);
+		Paciente paciente6 = new Paciente("juan", "calatayud", "555555555", "574747474", "eva peron 2942", "pacheco",
+				"bsas", "07/10/79", "carla@gmail.com");
+		DaoHibPaciente.crearPaciente(paciente6);
+		Paciente paciente7 = new Paciente("mateo", "guerrero", "66666666", "10010010", "eva peron 2942", "pacheco",
+				"bsas", "07/10/2013", "mateo@gmail.com");
+		DaoHibPaciente.crearPaciente(paciente7);
+		Paciente paciente8 = new Paciente("rosario", "guerrero", "777777777", "454545454", "eva peron 2942", "escobar",
+				"bsas", "07/10/2006", "rosario@gmail.com");
+		DaoHibPaciente.crearPaciente(paciente8);
+		Paciente paciente9 = new Paciente("rosario", "guerrero", "888888888", "123456788", "eva peron 2942", "san isidro",
+				"bsas", "07/10/2006", "rosario@gmail.com");
+		DaoHibPaciente.crearPaciente(paciente9);
+		Paciente paciente10 = new Paciente("rosario", "guerrero", "99999999", "90909090", "eva peron 2942", "tigre",
+				"bsas", "07/10/2006", "rosario@gmail.com");
+		DaoHibPaciente.crearPaciente(paciente10);
+		Paciente paciente11= new Paciente("rosario", "guerrero", "10101010101", "700700700", "eva peron 2942", "san fernado",
+				"bsas", "07/10/2006", "rosario@gmail.com");
+		DaoHibPaciente.crearPaciente(paciente11);
+
 
 		// crear un turno
-		Turno turno1 = new Turno(m1, paciente1, "20/06/24", "8hs", "pra ves", "particular");
-		DaoHibTurno.crearTurno(turno1);
-		Turno turno2 = new Turno(m1, paciente2, "20/06/24", "8:30hs", "pra ves", "particular");
-		DaoHibTurno.crearTurno(turno2);
-		Turno turno3 = new Turno(m3, paciente1, "22/06/24", "16hs", "chequeo", "galeno");
-		DaoHibTurno.crearTurno(turno3);
+				Turno turno1 = new Turno(m1, paciente1, "20/06/24", "8hs", "primera ves", "particular");
+				Turno turno2 = new Turno(m1, paciente2, "20/06/24", "8:30hs", "primera ves", "particular");
+				Turno turno3 = new Turno(m3, paciente11, "22/06/24", "16hs", "chequeo", "galeno");
+				Turno turno4 = new Turno(m1, paciente5, "21/06/24", "8hs", "control", "austral");
+				Turno turno5 = new Turno(m1, paciente6, "21/06/24", "8:30hs", "control", "medicus");
+				Turno turno6 = new Turno(m3, paciente7, "22/06/24", "16hs", "chequeo", "austral");
+				Turno turno7 = new Turno(m1, paciente7, "23/06/24", "8hs", "chequeo", "ioma");
+				Turno turno8 = new Turno(m1, paciente7, "24/06/24", "8:30hs", "primera ves", "femeba");
+				Turno turno9 = new Turno(m3, paciente8, "25/06/24", "16hs", "analisis", "ospia");
+				Turno turno10 = new Turno(m3, paciente8, "29/06/24", "16hs", "chequeo", "galeno");
+				
+				
+				
+				DaoHibTurno.crearTurno(turno1);
+				DaoHibTurno.crearTurno(turno2);
+				DaoHibTurno.crearTurno(turno3);
+				DaoHibTurno.crearTurno(turno4);
+				DaoHibTurno.crearTurno(turno5);
+				DaoHibTurno.crearTurno(turno6);
+				DaoHibTurno.crearTurno(turno7);
+				DaoHibTurno.crearTurno(turno8);
+				DaoHibTurno.crearTurno(turno9);
+				DaoHibTurno.crearTurno(turno10);
 		
 		System.out.println("\n		---  Lista de pacientes  ---\n");
 		 

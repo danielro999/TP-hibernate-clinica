@@ -1,10 +1,14 @@
 package pacheco.tp6grupo16.entidad;
-import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-@Table(name = "ESPECIALIDADES")
+@Table(name="ESPECIALIDADES")
 public class Especialidad implements Serializable {
 	
 	//implementar serializable
@@ -19,18 +23,23 @@ public class Especialidad implements Serializable {
     //@OneToMany(mappedBy = "especialidad")
    // private List<Medico> medicos;
 
-    public Especialidad() { }
-    
+      
+	public Especialidad() {
+		super();
+	}
+	
+	public Especialidad(String nombre) {
+		super();
+		this.nombre = nombre;
+	}
+	
 	public Especialidad(Long id, String nombre) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 	}
 
-
-
 	// Getters y Setters
-    
 	public Long getId() {
 		return id;
 	}

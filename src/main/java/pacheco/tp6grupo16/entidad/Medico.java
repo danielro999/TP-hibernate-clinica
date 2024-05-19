@@ -24,14 +24,14 @@ public class Medico implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int legajo;
 	
+	@ManyToOne(cascade= {CascadeType.ALL}, fetch = FetchType.LAZY)
+	@JoinColumn(name="id")
+	private Especialidad especialidad;
+	
 	@OneToOne(cascade= {CascadeType.ALL})
 	@JoinColumn(name="id_usuario")
 	private Usuario usuario;
 		
-	@ManyToOne(cascade= {CascadeType.ALL}, fetch = FetchType.LAZY)
-	@JoinColumn(name="especialidad_id")
-	private Especialidad especialidad;
-	
 	@Column(name="nombre")
 	private String nombre;
 	
@@ -58,8 +58,7 @@ public class Medico implements Serializable {
 	private String telefono;
 	
 	//constructor vacio
-	public Medico()
-	{
+	public Medico() {
 		super();
 	}
 	
@@ -76,6 +75,8 @@ public class Medico implements Serializable {
 		this.correoElectronico = correoElectronico;
 		this.telefono = telefono;
 	}
+
+
 
 	public Medico( String nombre, String apellido, String sexo, String fechaNacimiento, String direccion,
 			String localidad, String correoElectronico, String telefono) {
