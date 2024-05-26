@@ -8,7 +8,7 @@ import dao.DaoHibTurno;
 import pacheco.tp6grupo16.entidad.Especialidad;
 import pacheco.tp6grupo16.entidad.Medico;
 import pacheco.tp6grupo16.entidad.Paciente;
-import pacheco.tp6grupo16.entidad.Turno;
+import pacheco.tp6grupo16.entidad.Turno;                                
 import pacheco.tp6grupo16.entidad.Usuario;
 
 public class App {
