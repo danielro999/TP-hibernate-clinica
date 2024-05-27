@@ -12,6 +12,12 @@ public class AppConsultas {
 
 		System.out.println("\n     ---  Medicos con legajo de menor a mayor ---\n");
 		consultasHql.mostrarMedicosOrdenadosPorLegajoAsc();
+		
+		System.out.println("\n     ---  mostrar turnos con medicos ---\n");
+		consultasHql.mostrarTurnosPorDia();
+	
+		
+		
 	}
 
 }

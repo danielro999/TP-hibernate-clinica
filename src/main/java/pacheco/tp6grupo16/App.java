@@ -158,9 +158,11 @@ public class App {
 				Turno turno7 = new Turno(m1, paciente7, "23/06/24", "8hs", "chequeo", "ioma");
 				Turno turno8 = new Turno(m1, paciente7, "24/06/24", "8:30hs", "primera ves", "femeba");
 				Turno turno9 = new Turno(m3, paciente8, "25/06/24", "16hs", "analisis", "ospia");
-				Turno turno10 = new Turno(m3, paciente8, "29/06/24", "16hs", "chequeo", "galeno");
-				
-				
+				Turno turno10 = new Turno(m9, paciente8, "29/06/24", "16hs", "chequeo", "galeno");
+				Turno turno11 = new Turno(m9, paciente7, "01/01/25", "16hs", "chequeo", "ioma");
+				Turno turno12 = new Turno(m9, paciente5, "01/01/25", "16hs", "chequeo", "madicus");
+				Turno turno13 = new Turno(m5, paciente4, "01/01/25", "16hs", "chequeo", "amsa");
+				Turno turno14 = new Turno(m2, paciente1, "01/01/25", "16hs", "chequeo", "particular");
 				
 				DaoHibTurno.crearTurno(turno1);
 				DaoHibTurno.crearTurno(turno2);
@@ -172,6 +174,11 @@ public class App {
 				DaoHibTurno.crearTurno(turno8);
 				DaoHibTurno.crearTurno(turno9);
 				DaoHibTurno.crearTurno(turno10);
+				DaoHibTurno.crearTurno(turno11);
+				DaoHibTurno.crearTurno(turno12);
+				DaoHibTurno.crearTurno(turno13);
+				DaoHibTurno.crearTurno(turno14);
+				
 		
 		System.out.println("\n		---  Lista de pacientes  ---\n");
 		 
@@ -193,9 +200,9 @@ public class App {
 		}
 		
 		
-		System.out.println("\n		---  turno id=1 eliminado  ---\n");
+		//System.out.println("\n		---  turno id=1 eliminado  ---\n");
 
-		DaoHibTurno.eliminarTurnoPorId(1);
+		//DaoHibTurno.eliminarTurnoPorId(1);
 		
 		turnos = DaoHibTurno.ListarTurnos();
 		for (Turno turno : turnos) 

@@ -7,6 +7,7 @@ import org.hibernate.cfg.Configuration;
 import dao.ConfiguracionHibernate;
 import java.util.List;
 import pacheco.tp6grupo16.entidad.Medico;
+import pacheco.tp6grupo16.entidad.Turno;
 
 public class ConsultasHql {
 	private SessionFactory sessionFactory;
@@ -48,5 +49,25 @@ public class ConsultasHql {
 		session.close();
 
 	}
+	
+	//listar turnos
+	public void mostrarTurnosPorDia() {
+		ConfiguracionHibernate cfgH = new ConfiguracionHibernate();
+		Session session = cfgH.abrirConexion();
+       
+		List<Object[]> listaTurnos = (List<Object[]>)session.createQuery("FROM Turno as tur INNER JOIN tur.medico "
+				+ "where tur.fecha = '01/01/25' and tur.medico.legajo = 9").list();
+		
+		for (Object[] objetoTurno : listaTurnos) {
+			Turno turno =(Turno)objetoTurno[0]; 
+			Medico medico =(Medico)objetoTurno[1];
+			
+			System.out.println("dia: "+ turno.getFecha() + " Legajo Medico: "+ medico.getLegajo());
+		}
+
+		session.close();
+
+	}
+	
 
 }
