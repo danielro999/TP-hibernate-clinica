@@ -36,6 +36,10 @@ public class App {
 				"22352-3543");
 		Medico m11 = new Medico("julieta", "biondi", "fem", "02-02-44", "ibai 444", "madrid", "euroa@yahoo.com",
 				"22352-3543");
+		Medico m12 = new Medico("Edison", "Cavani", "masc", "02-02-80", "ibai 444", "madrid", "edi@yahoo.com",
+				"2235442-3543");
+		Medico m13 = new Medico("Di maria", "fideo", "masc", "02-02-80", "ibai 444", "madrid", "edi@yahoo.com",
+				"2235442-3543");
 
 		// usuario 1 por medico
 		Usuario usuario1 = new Usuario(m1, "kisCampora", "dios");
@@ -60,8 +64,13 @@ public class App {
 		m10.setUsuario(usuario10);
 		Usuario usuario11 = new Usuario(m11, "juliet", "6789");
 		m11.setUsuario(usuario11);
+		Usuario usuario12 = new Usuario(m12, "boca", "6789");
+		m12.setUsuario(usuario12);
+		Usuario usuario13 = new Usuario(m13, "central", "7777");
+		m12.setUsuario(usuario13);
+		
 
-		// especialidades
+		// especialidades instancias
 		Especialidad especialidad1 = new Especialidad("clinico");
 		Especialidad especialidad2 = new Especialidad("pediatra");
 		Especialidad especialidad3 = new Especialidad("traumatologo");
@@ -97,6 +106,8 @@ public class App {
 		m9.setEspecialidad(especialidad4);
 		m10.setEspecialidad(especialidad3);
 		m11.setEspecialidad(especialidad1);
+		m12.setEspecialidad(especialidad10);
+		m13.setEspecialidad(especialidad10);
 
 		// La clase Medico usa CascadeType.ALL para propagar la creacion de las tablas
 		// relacionadas(usuario y especilidad)
@@ -111,6 +122,9 @@ public class App {
 		DaoHibMedico.crearMedico(m9);
 		DaoHibMedico.crearMedico(m10);
 		DaoHibMedico.crearMedico(m11);
+		DaoHibMedico.crearMedico(m12);
+		DaoHibMedico.crearMedico(m13);
+		
 
 		// crear pacientes
 		Paciente paciente1 = new Paciente("walter", "guerrero", "21212121", "1549352758", "eva peron 2942", "garin",
@@ -148,7 +162,7 @@ public class App {
 		DaoHibPaciente.crearPaciente(paciente11);
 
 
-		// crear un turno
+		// crear un turno instancia
 				Turno turno1 = new Turno(m1, paciente1, "20/06/24", "8hs", "primera ves", "ausente");
 				Turno turno2 = new Turno(m1, paciente2, "20/06/24", "8:30hs", "primera ves", "presente");
 				Turno turno3 = new Turno(m3, paciente11, "22/06/24", "16hs", "chequeo", "presente");
@@ -230,8 +244,5 @@ public class App {
 			System.out.println("medico= " + medico.getNombre()+ " " + medico.getApellido() + ", "
 								+ "ususario= " + medico.getUsuario().getNombreUsuario());
 		}
-		
-		
-		
 	}
 }
