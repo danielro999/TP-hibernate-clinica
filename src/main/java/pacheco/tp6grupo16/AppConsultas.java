@@ -23,7 +23,7 @@ public class AppConsultas {
 		consultasHql.mostrarMedicoConMayorLegajo();
 */		
 		System.out.println("\n     ---  mostrar turno con fecha ---\n");
-		consultasHql.mostrarEstadoTurnosPorFecha();
+		consultasHql.mostrarEstadoTurnosPorFecha("'2024/01/01'", "'2024/12/01'");
 		
 	}
 

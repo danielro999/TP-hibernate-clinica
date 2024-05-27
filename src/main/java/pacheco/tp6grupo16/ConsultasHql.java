@@ -98,12 +98,13 @@ public class ConsultasHql {
 	    tx.commit();
 	    session.close();
 	}
-	public void  mostrarEstadoTurnosPorFecha() {
+	public void  mostrarEstadoTurnosPorFecha(String fechaInicio, String fechaFinal) {
 		ConfiguracionHibernate cfgH = new ConfiguracionHibernate();
 		Session session = cfgH.abrirConexion();
 
 		List<Object> listaPresentres = (List<Object>)session.createQuery(
-				"SELECT t FROM Turno t WHERE str_to_date(t.fecha, '%d/%m/%Y') BETWEEN '2024/01/01' AND '2024/03/01'").list();
+				"SELECT t FROM Turno t WHERE str_to_date(t.fecha, '%d/%m/%Y') "
+				+ "BETWEEN "+ fechaInicio +" AND " + fechaFinal).list();
 		
 		for (Object objetoTurno : listaPresentres) {
 			System.out.println(objetoTurno);
