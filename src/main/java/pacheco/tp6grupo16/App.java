@@ -67,7 +67,7 @@ public class App {
 		Usuario usuario12 = new Usuario(m12, "boca", "6789");
 		m12.setUsuario(usuario12);
 		Usuario usuario13 = new Usuario(m13, "central", "7777");
-		m12.setUsuario(usuario13);
+		m13.setUsuario(usuario13);
 		
 
 		// especialidades instancias
@@ -214,9 +214,9 @@ public class App {
 		}
 		
 		
-		//System.out.println("\n		---  turno id=1 eliminado  ---\n");
+		System.out.println("\n		---  turno id=1 eliminado  ---\n");
 
-		//DaoHibTurno.eliminarTurnoPorId(1);
+		DaoHibTurno.eliminarTurnoPorId(1);
 		
 		turnos = DaoHibTurno.ListarTurnos();
 		for (Turno turno : turnos) 
@@ -225,7 +225,7 @@ public class App {
 		}
 		
 	
-		System.out.println("\n		---  turno id=2 actualizado  ---\n");
+		System.out.println("\n		---  turno id=2 actualizado cambio de medico ---\n");
 
 		Turno turnoUpd = new Turno(2, m3, paciente1, "20/06/25", "700hs", "mal aliento", "particular");
 		DaoHibTurno.actualizarTurno(turnoUpd);

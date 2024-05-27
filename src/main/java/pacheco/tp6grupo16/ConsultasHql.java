@@ -41,9 +41,11 @@ public class ConsultasHql {
 		ConfiguracionHibernate cfgH = new ConfiguracionHibernate();
 		Session session = cfgH.abrirConexion();
 
-		List<Medico> listaMedicos = (List<Medico>)session.createQuery("FROM Medico m ORDER BY m.legajo ASC").list();
-		for (Medico medico : listaMedicos) {
-			System.out.println(medico);
+		List<Object[]> listaMedicosAtributo = (List<Object[]>)session.createQuery(
+				"SELECT m.legajo, m.nombre, m.apellido  FROM Medico m ORDER BY m.legajo ASC").list();
+		for (Object[] medicoAtributo : listaMedicosAtributo) {
+			System.out.println("Legajo: "
+					 + medicoAtributo[0] + ", Nombre: " + medicoAtributo[1] + " " + medicoAtributo[2]);
 		}
 
 		session.close();
