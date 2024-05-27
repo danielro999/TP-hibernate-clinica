@@ -45,18 +45,20 @@ public class ConsultasHql {
 				"SELECT m.legajo, m.nombre, m.apellido  FROM Medico m ORDER BY m.legajo ASC").list();
 		for (Object[] medicoAtributo : listaMedicosAtributo) {
 			System.out.println("Legajo: "
-					 + medicoAtributo[0] + ", Nombre: " + medicoAtributo[1] + " " + medicoAtributo[2]);
+					 + medicoAtributo[0] 
+							 + ", Nombre: " + medicoAtributo[1] 
+									 + " " + medicoAtributo[2]);
 		}
 
 		session.close();
-
 	}
+	
 	//listar turnos
 	public void mostrarTurnosPorDia() {
 		ConfiguracionHibernate cfgH = new ConfiguracionHibernate();
 		Session session = cfgH.abrirConexion();
 		List<Object[]> listaTurnos = (List<Object[]>)session.createQuery("FROM Turno as tur INNER JOIN tur.medico "
-				+ "where tur.fecha = '01/01/25' and tur.medico.legajo = 9").list();
+				+ "where tur.fecha = '01/01/2025' and tur.medico.legajo = 9").list();
 		
 		for (Object[] objetoTurno : listaTurnos) {
 			Turno turno =(Turno)objetoTurno[0]; 
@@ -69,6 +71,7 @@ public class ConsultasHql {
 
 		session.close();
 	}
+	
 	//SELECT ONE COLUMN
 	public void  mostrarSoloLegajoMedico() {
 		ConfiguracionHibernate cfgH = new ConfiguracionHibernate();
@@ -95,4 +98,17 @@ public class ConsultasHql {
 	    tx.commit();
 	    session.close();
 	}
+	public void  mostrarEstadoTurnosPorFecha() {
+		ConfiguracionHibernate cfgH = new ConfiguracionHibernate();
+		Session session = cfgH.abrirConexion();
+
+		List<Object> listaPresentres = (List<Object>)session.createQuery(
+				"SELECT t FROM Turno t WHERE str_to_date(t.fecha, '%d/%m/%Y') BETWEEN '2024/01/01' AND '2024/03/01'").list();
+		
+		for (Object objetoTurno : listaPresentres) {
+			System.out.println(objetoTurno);
+		}
+		session.close();
+	}
+	
 }
