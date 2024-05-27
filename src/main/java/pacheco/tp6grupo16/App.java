@@ -149,20 +149,20 @@ public class App {
 
 
 		// crear un turno
-				Turno turno1 = new Turno(m1, paciente1, "20/06/24", "8hs", "primera ves", "particular");
-				Turno turno2 = new Turno(m1, paciente2, "20/06/24", "8:30hs", "primera ves", "particular");
-				Turno turno3 = new Turno(m3, paciente11, "22/06/24", "16hs", "chequeo", "galeno");
-				Turno turno4 = new Turno(m1, paciente5, "21/06/24", "8hs", "control", "austral");
-				Turno turno5 = new Turno(m1, paciente6, "21/06/24", "8:30hs", "control", "medicus");
-				Turno turno6 = new Turno(m3, paciente7, "22/06/24", "16hs", "chequeo", "austral");
-				Turno turno7 = new Turno(m1, paciente7, "23/06/24", "8hs", "chequeo", "ioma");
-				Turno turno8 = new Turno(m1, paciente7, "24/06/24", "8:30hs", "primera ves", "femeba");
-				Turno turno9 = new Turno(m3, paciente8, "25/06/24", "16hs", "analisis", "ospia");
-				Turno turno10 = new Turno(m9, paciente8, "29/06/24", "16hs", "chequeo", "galeno");
-				Turno turno11 = new Turno(m9, paciente7, "01/01/25", "16hs", "chequeo", "ioma");
-				Turno turno12 = new Turno(m9, paciente5, "01/01/25", "16hs", "chequeo", "madicus");
-				Turno turno13 = new Turno(m5, paciente4, "01/01/25", "16hs", "chequeo", "amsa");
-				Turno turno14 = new Turno(m2, paciente1, "01/01/25", "16hs", "chequeo", "particular");
+				Turno turno1 = new Turno(m1, paciente1, "20/06/24", "8hs", "primera ves", "ausente");
+				Turno turno2 = new Turno(m1, paciente2, "20/06/24", "8:30hs", "primera ves", "presente");
+				Turno turno3 = new Turno(m3, paciente11, "22/06/24", "16hs", "chequeo", "presente");
+				Turno turno4 = new Turno(m1, paciente5, "21/06/24", "8hs", "control", "presente");
+				Turno turno5 = new Turno(m1, paciente6, "21/06/24", "8:30hs", "control", "ausente");
+				Turno turno6 = new Turno(m3, paciente7, "22/06/24", "16hs", "chequeo", "ausente");
+				Turno turno7 = new Turno(m1, paciente7, "23/06/24", "8hs", "chequeo", "presente");
+				Turno turno8 = new Turno(m1, paciente7, "24/06/24", "8:30hs", "primera ves", "ausente");
+				Turno turno9 = new Turno(m3, paciente8, "25/06/24", "16hs", "analisis", "ausente");
+				Turno turno10 = new Turno(m9, paciente8, "29/06/24", "17hs", "chequeo", "presente");
+				Turno turno11 = new Turno(m9, paciente7, "01/01/25", "18hs", "chequeo", "presente");
+				Turno turno12 = new Turno(m9, paciente5, "01/01/25", "19hs", "chequeo", "ausente");
+				Turno turno13 = new Turno(m5, paciente4, "01/01/25", "20hs", "chequeo", "presente");
+				Turno turno14 = new Turno(m2, paciente1, "01/01/25", "21hs", "chequeo", "ausente");
 				
 				DaoHibTurno.crearTurno(turno1);
 				DaoHibTurno.crearTurno(turno2);

@@ -15,9 +15,12 @@ public class AppConsultas {
 		
 		System.out.println("\n     ---  mostrar turnos con medicos ---\n");
 		consultasHql.mostrarTurnosPorDia();
-	
 		
+		System.out.println("\n     ---  mostrar solo  legajos medicos ---\n");
+		consultasHql.mostrarSoloLegajoMedico();
 		
+		System.out.println("\n     ---  mostrar medico con mayor legajo ---\n");
+		consultasHql.mostrarMedicoConMayorLegajo();
 	}
 
 }
