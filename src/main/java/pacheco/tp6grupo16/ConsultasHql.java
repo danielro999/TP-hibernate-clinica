@@ -98,17 +98,43 @@ public class ConsultasHql {
 	    tx.commit();
 	    session.close();
 	}
-	public void  mostrarEstadoTurnosPorFecha(String fechaInicio, String fechaFinal) {
+	public void mostrarEstadoTurnosEntreFechas(String fechaInicio, String fechaFinal) {
 		ConfiguracionHibernate cfgH = new ConfiguracionHibernate();
 		Session session = cfgH.abrirConexion();
-
-		List<Object> listaPresentres = (List<Object>)session.createQuery(
-				"SELECT t FROM Turno t WHERE str_to_date(t.fecha, '%d/%m/%Y') "
-				+ "BETWEEN "+ fechaInicio +" AND " + fechaFinal).list();
 		
-		for (Object objetoTurno : listaPresentres) {
-			System.out.println(objetoTurno);
+		// consulta para obtener el estado de los turnos entre las fechas ingresada por paremetro
+		@SuppressWarnings("unchecked")
+		List<Object[]> listaPresentres = (List<Object[]>)session.createQuery(
+				"SELECT t.fecha, t.estado FROM Turno t WHERE str_to_date(t.fecha, '%d/%m/%Y') "
+				+ "BETWEEN "+ fechaInicio +" AND " + fechaFinal +
+				"order by str_to_date(t.fecha, '%d/%m/%Y')").list();
+		// variables para los calculos de los porcentajes
+		int cantidadAusentes= 0;
+		int cantidadPresentes= 0;
+		float suma;
+		float porcentajeAusente;
+		float porcentajePresente;
+		
+		// iterar sobre los estados obtenidos, contando las cantidades de los ausentes y presenstes
+		for (Object[] objetosTurno : listaPresentres) {
+			System.out.println(objetosTurno[0]+" "+ objetosTurno[1] );
+			if (objetosTurno[1].equals("ausente")) {
+				cantidadAusentes+= 1;	
+			}
+			if (objetosTurno[1].equals("presente")) {
+				cantidadPresentes+= 1;
+			} 
 		}
+		// una ves contados las cantidades de ausentes y presentes se hacen los calculos procentuales
+		suma= cantidadAusentes + cantidadPresentes;
+		porcentajeAusente= cantidadAusentes / suma * 100;
+		porcentajePresente = cantidadPresentes / suma * 100;
+		
+		//imprimir en pantalla los resultados
+		System.out.println("\ncantidad ausentes= "+cantidadAusentes);
+		System.out.println("cantidad presenetes= "+cantidadPresentes+"\n");
+		System.out.printf("\nPorcentaje de ausentes= %.0f%%  \n", porcentajeAusente);
+		System.out.printf("Porcentaje de presentes= %.0f%% ", porcentajePresente);
 		session.close();
 	}
 	

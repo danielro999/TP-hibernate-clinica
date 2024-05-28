@@ -173,22 +173,36 @@ public class App {
 				Turno turno8 = new Turno(m1, paciente7, "24/02/2024", "8:30hs", "primera ves", "ausente");
 				Turno turno9 = new Turno(m3, paciente8, "25/02/2024", "16hs", "analisis", "ausente");
 				Turno turno10 = new Turno(m9, paciente8, "29/02/2024", "17hs", "chequeo", "presente");
-				Turno turno11 = new Turno(m9, paciente7, "01/03/2025", "18hs", "chequeo", "presente");
-				Turno turno12 = new Turno(m9, paciente5, "01/03/2025", "19hs", "chequeo", "ausente");
-				Turno turno13 = new Turno(m5, paciente4, "01/03/2025", "20hs", "chequeo", "presente");
-				Turno turno14 = new Turno(m2, paciente1, "01/03/2025", "21hs", "chequeo", "ausente");
-			
+				Turno turno11 = new Turno(m9, paciente7, "01/03/2025", "18hs", "chequeo", "pendiente");
+				Turno turno12 = new Turno(m9, paciente5, "01/01/2025", "19hs", "chequeo", "pendiente");
+				Turno turno13 = new Turno(m5, paciente4, "01/01/2025", "20hs", "chequeo", "pendiente");
+				Turno turno14 = new Turno(m2, paciente1, "01/01/2025", "21hs", "chequeo", "pendiente");
 				Turno turno15 = new Turno(m1, paciente6, "21/03/2024", "8:30hs", "control", "ausente");
 				Turno turno16 = new Turno(m3, paciente7, "22/03/2024", "16hs", "chequeo", "ausente");
-				Turno turno17 = new Turno(m1, paciente7, "23/03/2024", "8hs", "chequeo", "presente");
+				Turno turno17 = new Turno(m1, paciente10, "23/03/2024", "8hs", "chequeo", "presente");
 				Turno turno18 = new Turno(m1, paciente7, "24/03/2024", "8:30hs", "primera ves", "ausente");
 				Turno turno19 = new Turno(m3, paciente8, "25/03/2024", "16hs", "analisis", "ausente");
-				Turno turno20 = new Turno(m9, paciente8, "29/03/2024", "17hs", "chequeo", "presente");
-				Turno turno21 = new Turno(m9, paciente7, "01/01/2025", "18hs", "chequeo", "pendiente");
-				Turno turno22 = new Turno(m9, paciente5, "01/01/2025", "19hs", "chequeo", "pendiente");
-				Turno turno23 = new Turno(m5, paciente4, "01/01/2025", "20hs", "chequeo", "pendiente");
-				Turno turno24 = new Turno(m2, paciente1, "01/01/2025", "21hs", "chequeo", "pendiente");
-				
+				Turno turno20 = new Turno(m9, paciente11, "29/03/2024", "17hs", "chequeo", "presente");
+				Turno turno21 = new Turno(m9, paciente7, "01/06/2024", "18hs", "chequeo", "pendiente");
+				Turno turno22 = new Turno(m9, paciente5, "05/06/2024", "19hs", "chequeo", "pendiente");
+				Turno turno23 = new Turno(m5, paciente4, "07/07/2024", "20hs", "chequeo", "pendiente");
+				Turno turno24 = new Turno(m2, paciente1, "20/07/2024", "21hs", "chequeo", "pendiente");
+				Turno turno25 = new Turno(m1, paciente6, "21/12/2023", "8:30hs", "control", "presente");
+				Turno turno26 = new Turno(m3, paciente7, "22/02/2024", "16hs", "chequeo", "presente");
+				Turno turno27 = new Turno(m1, paciente7, "23/02/2024", "8hs", "chequeo", "presente");
+				Turno turno28 = new Turno(m1, paciente7, "24/02/2024", "8:30hs", "primera ves", "presente");
+				Turno turno29 = new Turno(m3, paciente8, "25/02/2024", "16hs", "analisis", "presente");
+				Turno turno30 = new Turno(m9, paciente8, "29/02/2024", "17hs", "chequeo", "presente");
+				Turno turno31 = new Turno(m9, paciente7, "12/03/2024", "18hs", "chequeo", "presente");
+				Turno turno32 = new Turno(m9, paciente5, "23/01/2024", "19hs", "chequeo", "presente");
+				Turno turno33 = new Turno(m5, paciente4, "20/02/2024", "20hs", "chequeo", "presente");
+				Turno turno34 = new Turno(m2, paciente1, "22/03/2024", "21hs", "chequeo", "presente");
+				Turno turno35 = new Turno(m1, paciente6, "21/03/2024", "8:30hs", "control", "ausente");
+				Turno turno36 = new Turno(m3, paciente7, "22/04/2024", "16hs", "chequeo", "ausente");
+				Turno turno37 = new Turno(m1, paciente10, "23/04/2024", "8hs", "chequeo", "presente");
+				Turno turno38 = new Turno(m1, paciente7, "24/05/2024", "8:30hs", "primera ves", "ausente");
+				Turno turno39 = new Turno(m3, paciente8, "25/05/2024", "16hs", "analisis", "ausente");
+				Turno turno40 = new Turno(m9, paciente11, "26/05/2024", "17hs", "chequeo", "presente");
 				
 				DaoHibTurno.crearTurno(turno1);
 				DaoHibTurno.crearTurno(turno2);
@@ -214,6 +228,22 @@ public class App {
 				DaoHibTurno.crearTurno(turno22);
 				DaoHibTurno.crearTurno(turno23);
 				DaoHibTurno.crearTurno(turno24);
+				DaoHibTurno.crearTurno(turno25);
+				DaoHibTurno.crearTurno(turno26);
+				DaoHibTurno.crearTurno(turno27);
+				DaoHibTurno.crearTurno(turno28);
+				DaoHibTurno.crearTurno(turno29);
+				DaoHibTurno.crearTurno(turno30);
+				DaoHibTurno.crearTurno(turno31);
+				DaoHibTurno.crearTurno(turno32);
+				DaoHibTurno.crearTurno(turno33);
+				DaoHibTurno.crearTurno(turno34);
+				DaoHibTurno.crearTurno(turno35);
+				DaoHibTurno.crearTurno(turno36);
+				DaoHibTurno.crearTurno(turno37);
+				DaoHibTurno.crearTurno(turno38);
+				DaoHibTurno.crearTurno(turno39);
+				DaoHibTurno.crearTurno(turno30);
 		
 		System.out.println("\n		---  Lista de pacientes  ---\n");
 		 
@@ -248,7 +278,7 @@ public class App {
 	
 		System.out.println("\n		---  turno id=2 actualizado cambio de medico ---\n");
 
-		Turno turnoUpd = new Turno(2, m3, paciente1, "20/06/2025", "700hs", "mal aliento", "particular");
+		Turno turnoUpd = new Turno(2, m3, paciente1, "20/06/2024", "700hs", "mal aliento", "pendiente");
 		DaoHibTurno.actualizarTurno(turnoUpd);
 		turnos = DaoHibTurno.ListarTurnos();
 		for (Turno turno : turnos) {

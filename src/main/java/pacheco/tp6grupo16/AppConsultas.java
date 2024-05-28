@@ -4,7 +4,7 @@ public class AppConsultas {
 
 	public static void main(String[] args) {
 		ConsultasHql consultasHql = new ConsultasHql();
-/*
+
 		System.out.println("\n     ---  Medicos con legajo de mayor a menor ---\n");
 
 		consultasHql.mostrarMedicosOrdenadosPorLegajoDesc();
@@ -21,9 +21,9 @@ public class AppConsultas {
 		
 		System.out.println("\n     ---  mostrar medico con mayor legajo ---\n");
 		consultasHql.mostrarMedicoConMayorLegajo();
-*/		
-		System.out.println("\n     ---  mostrar turno con fecha ---\n");
-		consultasHql.mostrarEstadoTurnosPorFecha("'2024/01/01'", "'2024/12/01'");
+		
+		System.out.println("\n     ---  mostrar porcentajes ausentes/presentes  ---\n");
+		consultasHql.mostrarEstadoTurnosEntreFechas("'2024/01/01'", "'2024/03/01'");
 		
 	}
 
